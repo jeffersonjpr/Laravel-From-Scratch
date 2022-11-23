@@ -17,19 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/hello', function () {
-    return response('Hello World', 200)
-        ->header('Content-Type', 'text/plain')
-        ->header('FOO', 'BAR');
-});
-
-
-Route::get('/posts/{id}', function ($id) {
-    // ddd($id);
-    return response('Post: ' . $id);
-})->where('id', '[0-9]+');
-
-Route::get('/search', function (Request $request) {
-    return response($request->name . ' - ' . $request->city);
-});
