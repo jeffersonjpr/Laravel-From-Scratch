@@ -21,3 +21,12 @@ Route::get('/', function () {
         'listings' => Listing::all()
     ]);
 });
+
+// Single listing
+
+Route::get('/listings/{id}', function($id) {
+    return view('listing', [
+        'heading' => 'Listing: ' . $id,
+        'listing' => Listing::find($id) 
+    ]);
+});

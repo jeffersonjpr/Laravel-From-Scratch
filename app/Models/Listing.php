@@ -21,4 +21,15 @@ class Listing
             ]
         ];
     }
+
+    public static function find($id)
+    {
+        $listings = static::all();
+
+        foreach ($listings as $listing) {
+            if ($listing['id'] == $id) {
+                return $listing;
+            }
+        }
+    }
 }
