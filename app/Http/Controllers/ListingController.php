@@ -10,6 +10,7 @@ class ListingController extends Controller
     // Show all listings
     public function index()
     {
+        dd(request());
         return view('listings.index', [
             'listings' => Listing::all()
         ]);
