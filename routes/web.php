@@ -15,13 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ListingController::class, 'index']);
-
-// Single listing
-
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
-
 // Common Resource Routes:
 // index - Show all listings
 // show - Show single listing
@@ -30,3 +23,10 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // edit - Show form to edit listing
 // update - Update listing
 // destroy - Delete listing
+
+Route::get('/', [ListingController::class, 'index']);
+
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
